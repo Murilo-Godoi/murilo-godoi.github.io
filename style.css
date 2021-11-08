@@ -1,0 +1,347 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e4e4e4;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Menu */
+.bar{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: #000000;
+}
+
+.menu{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 10px ;
+}
+
+.menu > a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 32px;
+    margin-left: 20px;
+}
+
+.menu ul{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.menu ul li{
+    text-align: center;
+    width: 100%;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+/* Apresentação */
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: 370px;
+    width: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+        115deg,
+        rgba(94, 94, 94, 0.897),
+        rgba(85, 85, 85, 0.7)
+      ),
+      url(/img/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+header{
+    min-height: 370px;
+    color: #e4e4e4;
+    margin-top: 70px;
+    width: 100%;
+}
+
+header img{
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+}
+
+header h1{
+    font-size: 3em;
+}
+
+.inactive{
+    display: none;
+}
+.header-wrap{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 350px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+
+
+.wrap{
+    max-width: 1200px;
+    margin: 30px auto;
+
+}
+
+/* Sobre */
+
+.sobre{
+    min-height: 250px;
+    padding: 0 20px;
+}
+
+.sobre p{
+    margin-top: 10px;
+}
+
+.sobre h1{
+    margin-bottom: 20px;
+}
+
+/* Portfolio */
+
+.projetos{
+    box-shadow: 0px 1px 2px 0 #373737;
+    background-color: #a9a9a9;
+    border-radius: 10px 10px 5px 5px;
+    margin: 0 1%;
+}
+
+.projetos-header{
+    background-color: #000000;
+    color: #e4e4e4;
+    height: 50px;
+    border-radius: 10px 10px 0 0 ;
+    padding: 10px 15px;
+}
+
+.projetos-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    height: 50px;
+    font-size: larger;
+    background-color: #a9a9a9;
+    border-style: none;
+    padding: 3px;
+    margin: 0 3px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #373737;
+    color: #a9a9a9;
+    transition: all .5s;
+}
+
+.container{
+    display: flex;
+    overflow: hidden;
+}
+
+
+.item-portfolio{
+    min-width: 31%;
+    min-height: 450px;
+    margin: 15px 1%;
+    background-color: #e4e4e4;
+    box-shadow: 0 2px 5px 0 #373737;
+    border-radius: 5px;
+    transition: all 1s;
+
+}
+
+.item-portfolio:first-child{
+    margin-left: -31.5%;
+}
+
+
+
+.item-portfolio img{
+    width: 100%;
+    height: 250px;
+}
+
+
+
+.description{
+    padding: 15px 30px;
+}
+
+.description h2{
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+@media(max-width: 768px) {
+    .item-portfolio{
+        min-width: 48%;
+    }
+
+    .item-portfolio:first-child {
+        margin-left: -49%;
+    }
+}
+
+@media(max-width: 550px){
+    .menu{
+        display: none;
+    }
+
+    .header-wrap{
+        flex-direction: column;
+    }
+    
+    header::before{
+        top: 0px;
+    }
+
+    header{
+        margin-top: 0px;
+    }
+
+    .item-portfolio{
+        min-width: 97%;
+        width: 97%;
+    }
+
+    .item-portfolio:first-child {
+        margin-left: -97%;
+        box-shadow: none;
+    }
+
+    .contato > div{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+/* Contato */
+
+
+.contato{
+    max-width: 500px;
+    text-align: center;
+}
+
+.contato > div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.item-contato img{
+    width: 100%;
+    height: 100px;
+}
+
+
+.item-contato{
+    max-width: 80px;
+    margin-bottom: 20px;
+}
+
+.item-contato a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.item-contato:hover{
+    cursor: pointer;
+}
+
+
+
+
+/*<div class="item-portfolio">
+                    <img src="img/landing.png" alt="">
+                    <div class="description">
+                        <h2>Landing Page</h2>
+                        <p>Site desenvolvido em HTML e CSS, totalmente responsivo</p>    
+                    </div>
+                </div>
+                
+                <div class="item-portfolio">
+                    <img src="img/img.png" alt="">
+                    <div class="description">
+                        <h2>Landing Page</h2>
+                        <p>Site desenvolvido em HTML e CSS, totalmente responsivo</p>    
+                    </div>
+                    
+                </div>
+    
+                <div class="item-portfolio">
+                    <img src="img/img.png" alt="">
+                    <div class="description">
+                        <h2>Landing Page</h2>
+                        <p>Site desenvolvido em HTML e CSS, totalmente responsivo</p>
+                    </div>
+                    
+                </div>
+    
+                <div class="item-portfolio">
+                    <img src="img/financeiro.png" alt="">
+                    <div class="description">
+                        <h2>Controle financeiro</h2>
+                        <p>Aplicação para controle financeiro desenvolvida em Javascript, onde é possível registrar as transações realizadas em cada mês e visualizar o saldo atual. Os dados são armazenados com o uso do local storage</p>
+                    </div>
+                    
+                </div>
+    
+                <div class="item-portfolio">
+                    <img src="img/formulario.png" alt="">
+                    <div class="description">
+                        <h2>Formulário</h2>
+                        <p>Formulário desenvolvido em HTML e CSS</p>
+                    </div>   
+                </div>
+    
+                <div class="item-portfolio">
+                    <img src="img/img.png" alt="">
+                    <div class="description">
+                        <h2>Calculadora de juros compostos</h2>
+                        <p>Calculadora em Javascript para cálculo de juros compostos com aportes mentais</p>
+                    </div>
+                   
+                </div>*/
+
+
+
+
