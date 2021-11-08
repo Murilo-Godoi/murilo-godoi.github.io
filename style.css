@@ -196,7 +196,10 @@ button:hover{
     height: 250px;
 }
 
-
+.item-portfolio:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
 
 .description{
     padding: 15px 30px;
@@ -286,62 +289,4 @@ button:hover{
 .item-contato:hover{
     cursor: pointer;
 }
-
-
-
-
-/*<div class="item-portfolio">
-                    <img src="img/landing.png" alt="">
-                    <div class="description">
-                        <h2>Landing Page</h2>
-                        <p>Site desenvolvido em HTML e CSS, totalmente responsivo</p>    
-                    </div>
-                </div>
-                
-                <div class="item-portfolio">
-                    <img src="img/img.png" alt="">
-                    <div class="description">
-                        <h2>Landing Page</h2>
-                        <p>Site desenvolvido em HTML e CSS, totalmente responsivo</p>    
-                    </div>
-                    
-                </div>
-    
-                <div class="item-portfolio">
-                    <img src="img/img.png" alt="">
-                    <div class="description">
-                        <h2>Landing Page</h2>
-                        <p>Site desenvolvido em HTML e CSS, totalmente responsivo</p>
-                    </div>
-                    
-                </div>
-    
-                <div class="item-portfolio">
-                    <img src="img/financeiro.png" alt="">
-                    <div class="description">
-                        <h2>Controle financeiro</h2>
-                        <p>Aplicação para controle financeiro desenvolvida em Javascript, onde é possível registrar as transações realizadas em cada mês e visualizar o saldo atual. Os dados são armazenados com o uso do local storage</p>
-                    </div>
-                    
-                </div>
-    
-                <div class="item-portfolio">
-                    <img src="img/formulario.png" alt="">
-                    <div class="description">
-                        <h2>Formulário</h2>
-                        <p>Formulário desenvolvido em HTML e CSS</p>
-                    </div>   
-                </div>
-    
-                <div class="item-portfolio">
-                    <img src="img/img.png" alt="">
-                    <div class="description">
-                        <h2>Calculadora de juros compostos</h2>
-                        <p>Calculadora em Javascript para cálculo de juros compostos com aportes mentais</p>
-                    </div>
-                   
-                </div>*/
-
-
-
 
