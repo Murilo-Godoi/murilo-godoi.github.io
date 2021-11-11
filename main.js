@@ -1,3 +1,4 @@
+//escrever o nome no cabeçalho
 const typeWriter = (elemento) => {
     const textoArray = elemento.innerHTML.split('');
     elemento.innerHTML = '';
@@ -7,14 +8,7 @@ const typeWriter = (elemento) => {
     });
 }
 
-const dados = [
-    { 'img':'img/landing.png', 'title':'Landing Page',},
-    { 'img':'img/landing-2.png', 'title':'Landing Page',},
-    { 'img':'img/formulario.png', 'title':'Formulário',},
-    { 'img':'img/financeiro.png', 'title':'Controle financeiro',},
-    { 'img':'img/calculadora.png', 'title':'Calculadora de juros compostos',},
-]
-
+//criar a lista de itens do portfolio
 const loadItems = (dados, container) => {
     dados.forEach( (dados,index) => {
         container.innerHTML += `
@@ -28,37 +22,79 @@ const loadItems = (dados, container) => {
     })
 }
 
-
-const container = document.querySelector('.container')
-
-loadItems(dados,container)
-
-
-let itens = document.querySelectorAll('.item-portfolio');
-
+// avançar e voltar os itens do portfolio
 const next = () => {
-    container.appendChild(itens[0]);
+    let itens = document.querySelectorAll('.item-portfolio');
+    mainContainer.appendChild(itens[0]);
     itens = document.querySelectorAll('.item-portfolio');
 }
 
 const previous = () => {
+    let itens = document.querySelectorAll('.item-portfolio');
     const lastItem = itens[itens.length - 1];
-    container.insertBefore(lastItem, itens[0]);
+    mainContainer.insertBefore(lastItem, itens[0]);
     itens = document.querySelectorAll('.item-portfolio');
 }
 
 
+// abrir e fechar pop-up com os sites do formulário
+const openPopUp = () => document.getElementById('pop-up').classList.add('active')
 
+const closePopUp = () => {
+    document.getElementById('site').classList.remove('small')
+    document.getElementById('pop-up').classList.remove('active')
+    linkRemover(whichSite)
+}
+
+// carregar as informações contidas no pop-up
+const loadPopUp = (evento) => {
+    whichSite = evento.target.parentNode.dataset.index
+    document.getElementById('info-icon').dataset.info = `${dados[whichSite].info}`
+    if(whichSite){
+        document.getElementById('site').innerHTML = `${dados[whichSite].code}`
+        openPopUp()
+        linkLoader(evento.target.parentNode.dataset.index)
+    }
+    
+}
+
+// inserir e remover uma tag <link> com a folha de estilo certa para cada site do portfólio 
+const linkLoader = (index) =>{
+    const headID = document.getElementsByTagName('head')[0];
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `css/site-${index}.css`;
+    link.id = `link-${index}`;
+    headID.appendChild(link);
+}
+
+const linkRemover = (index) => {
+    const link = document.getElementById(`link-${index}`);
+    link.parentNode.removeChild(link)
+}
+
+
+
+
+
+// variavel global que define o container onde os itens do portfolio ficarao
+const mainContainer = document.querySelector('.container')
+
+// chamadas de funções
+loadItems(dados,mainContainer)
+typeWriter(document.querySelector('#name'))
+setTimeout( () => typeWriter(document.querySelector('#subtitle')),1000)
+
+// eventos de avançar ou voltar itens do portfolio
 document.querySelector('#previous').addEventListener('click',previous);
 document.querySelector('#next').addEventListener('click',next);
 
 
+//variavel global que recebe o indice do  ultimo site aberto do portfolio
+let whichSite = 0
 
-
-// eventos
-typeWriter(document.querySelector('#name'))
-setTimeout( () => typeWriter(document.querySelector('#subtitle')),1000)
-
-
+// eventos de abrir e fechar o pop-up do portfolio
+document.querySelector('.container').addEventListener('click',loadPopUp)
+document.getElementById('close').addEventListener('click',closePopUp)
 
 

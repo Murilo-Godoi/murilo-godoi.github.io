@@ -218,6 +218,7 @@ const deleteTransaction = (event) => {
     }
 }
 
+// usar esse script no momento certo
 const activateFinanceiro = (evento) => {
     if (evento.target.parentNode.dataset.index == 3){
         updateScreen()
