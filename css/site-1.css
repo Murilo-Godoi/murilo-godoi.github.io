@@ -1,0 +1,310 @@
+
+
+:root{
+    --primary-color: #438496;
+    --secundary-color: #dce6f0;
+    --shadow-color: #000000;
+    --text-color-1: #ffffff;
+    --text-color-2: #000000;
+}
+
+
+body{
+    font-family: nunito, sans-serif;
+    text-align: center;
+
+}
+
+h1,h2,h3{
+    font-family: Asap, sans-serif;
+}
+
+
+/*.nav */
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.nav > a {
+    text-decoration: none;
+    color: var(--text-color-1);
+    font-weight: 800;
+    font-size: 32px;
+    font-family: yellowtail, serif;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.nav ul li{
+    position:relative;
+    text-align: center;
+    width: 100%;
+}
+
+.nav ul li a{
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color-1);
+}
+
+.nav ul ul{
+    position: absolute;
+    display: none;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-shadow: 0px 8px 16px 0px var(--shadow-color);
+    z-index: 1;
+}
+
+.nav ul li:hover ul{
+    display: block;
+}
+
+.nav a:hover{
+    background-color: var(--secundary-color);
+    color: var(--primary-color);
+}
+
+
+/* cabeçalho */
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../img/site-1/camera.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--text-color-1);
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    min-height: 450px;
+    justify-content: center;
+}
+
+header p{
+    margin-bottom: 2em;
+}
+
+.botao{
+    color: var(--text-color-1);
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: var(--primary-color);
+    font-size: .9em;
+    border-radius: 3px;
+
+}
+
+/* Sobre */
+
+.sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 20px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color-1);
+    justify-content: center
+;}
+
+
+.sobre p{
+    margin-bottom: 2.5em;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.sobre .botao{
+    background-color: var(--secundary-color);
+    color: var(--text-color-2);
+}
+
+/*serviços*/
+
+
+.serviços h2{
+    text-align: center;
+    width: 100%;
+}
+
+
+.serviços{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.serviços div{
+    flex-grow: 1;
+    flex-basis: 150px;
+    padding: 0 10px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px 10px 0;
+}
+
+.serviços img{
+    height: 50px;
+}
+
+.serviços h3{
+    height: 25px;
+}
+
+/* Fotos */
+
+
+.fotos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.fotos h2{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.fotos img{
+    width: 100%;
+}
+
+.fotos img:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/* contato */
+
+
+
+
+.contato{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 500px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+
+.contato div{
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.contato div a{
+    color: var(--text-color-2);
+    text-decoration: none;
+}
+
+.contato h2, #contato p{
+    width: 100%;
+    padding: 10px;
+}
+
+
+/* Rodapé */
+
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color-1);
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--text-color-1);
+}
+
+
+/* Pop Up */
+
+
+.pop-content{
+    width: 80vw;
+    height: 80vh;
+    margin: 5vh auto;
+    box-shadow: 1px 1px 10px var(--shadow-color);
+    background: var(--secundary-color);
+    position: relative;
+    padding: 20px;
+}
+
+.pop-content button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    color: var(--secundary-color);
+    border: none;
+}
+
+.pop-content button:hover{
+    cursor: pointer;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img{
+    max-width: 90%;
+    max-height: 500px;
+}
+
+@media(min-width:768px) {
+    .nav{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav ul{
+        flex-direction: row;
+        width:50%;
+    }
+
+    .fotos{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .fotos h2{
+        width: 100%;
+        text-align: center;
+    }
+
+    .fotos img{
+        max-width: 33.333333%;
+    }
+
+}

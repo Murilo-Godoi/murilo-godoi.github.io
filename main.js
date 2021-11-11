@@ -8,21 +8,20 @@ const typeWriter = (elemento) => {
 }
 
 const dados = [
-    { 'img':'img/landing-2.png', 'title':'Landing Page', 'description':'Landing page responsiva desenvolvida em HTML e CSS'},
-    { 'img':'img/financeiro.png', 'title':'Controle financeiro', 'description':'CRUD para controle financeiro desenvolvido em Javascript'},
-    { 'img':'img/formulario.png', 'title':'Formulário', 'description':'Formulário desenvolvido em HTML e CSS'},
-    { 'img':'img/landing.png', 'title':'Landing Page', 'description':'Site desenvolvido em HTML e CSS, totalmente responsivo'},
-    { 'img':'img/calculadora.png', 'title':'Calculadora de juros compostos', 'description':'Calculadora em Javascript para cálculo de juros compostos com aportes mentais'},
+    { 'img':'img/landing.png', 'title':'Landing Page',},
+    { 'img':'img/landing-2.png', 'title':'Landing Page',},
+    { 'img':'img/formulario.png', 'title':'Formulário',},
+    { 'img':'img/financeiro.png', 'title':'Controle financeiro',},
+    { 'img':'img/calculadora.png', 'title':'Calculadora de juros compostos',},
 ]
 
 const loadItems = (dados, container) => {
-    dados.forEach( dados => {
+    dados.forEach( (dados,index) => {
         container.innerHTML += `
-        <div class="item-portfolio">
+        <div class="item-portfolio" data-index=${index}>
             <img src="${dados.img}">
-            <div class="description">
+            <div class="description" data-index=${index}>
                 <h2>${dados.title}</h2>
-                <p>${dados.description}</p>
             </div>   
         </div>
         `
@@ -59,6 +58,7 @@ document.querySelector('#next').addEventListener('click',next);
 // eventos
 typeWriter(document.querySelector('#name'))
 setTimeout( () => typeWriter(document.querySelector('#subtitle')),1000)
+
 
 
 

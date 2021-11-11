@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murilo Godoi - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/main-style.css" id="link-100">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    </head>
+</head>
 <body>
     <div class="bar">
         <nav class="menu">
@@ -36,9 +36,9 @@
     <section class="section-sobre">
         <div class="sobre wrap">
             <h1>Sobre mim</h1>
-            <p>Atualmente estudo engenharia de produção na Universidade de São Paulo (USP). Através da graduação, tive meu primeiro contato com a programação, desenvolvendo logo de cara um grande interesse pela área. </p> 
-            <p>Recentemente, venho estudando HTML, CSS e Javascript com o objetivo de entrar no mercado de trabalho. </p>
-            <p>Possuo excelente capacidade analítica e relacionamento interpessoal, além de muita motivação e facilidade para aprender tecnologias novas</p>     
+            <p>Olá, meu nome é Murilo Godoi, prazer em conhecê-lo! Atualmente, estudo engenharia de produção na Universidade de São Paulo (USP). Através da graduação, tive meu primeiro contato com a programação, desenvolvendo logo de cara um grande interesse pela área. </p> 
+            <p>Estou em busca de uma oportunidade de entrar no mercado de desenvolvimento front-end. Para isso, venho estudando HTML, CSS e Javascript por conta própria e através de cursos online. Acredito que já possuo os conhecimentos necessários para trabalhar como júnior nessas 3 tecnologias puras, portanto comecei recentemente a estudar as bibliotecas Jquery e React.</p>
+            <p>Possuo excelente capacidade analítica e relacionamento interpessoal, com boa comunicação escrita e verbal. Além disso, estou extremamente motivado para aprender cada vez mais tecnologias novas.</p>     
         </div>
         </section>
 
@@ -46,12 +46,13 @@
         <div class="projetos">
             <div class="projetos-header">
                 <h1>Projetos</h1>
+                <div class="info portfolio" id="info-portfolio"><img src="img/info.png"></div>
             </div>
 
             <div class="projetos-content">
-                <button id="previous">&laquo;</button>
+                <button class="portfolio-button" id="previous">&laquo;</button>
                 <div class="container"></div>
-                <button id="next">&raquo;</button>
+                <button class="portfolio-button" id="next">&raquo;</button>
             </div>
             
 
@@ -85,7 +86,19 @@
         </div>
     </section>
 
+    <section class="pop-up-container">
+        <div class="pop-up" id="pop-up">
+            <div class="info pop" id="info-icon" data-info=''><img src="img/info.png"></div>
+            <button id="close">X</button>
+            <div id="site" class="site"></div>
+        </div>
+    </section>
+
     <script src="main.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="financeiro.js"></script>
+    <script src="calculadora.js"></script>
+    <script src="formulário.js"></script>
+
 </body>
 </html>
-
