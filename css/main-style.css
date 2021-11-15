@@ -52,9 +52,7 @@ body{
     color: #FFFFFF;
 }
 
-
 /* Apresentação */
-
 header::before {
     content: '';
     position: absolute;
@@ -72,7 +70,7 @@ header::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-  }
+}
 
 header{
     min-height: 370px;
@@ -105,9 +103,7 @@ header h1{
     padding: 10px;
 }
 
-
-
-
+/*  classe para limitar larguta da pagina */
 .wrap{
     max-width: 1200px;
     margin: 30px auto;
@@ -115,7 +111,6 @@ header h1{
 }
 
 /* Sobre */
-
 .sobre{
     min-height: 250px;
     padding: 0 20px;
@@ -131,7 +126,6 @@ header h1{
 }
 
 /* Portfolio */
-
 .projetos{
     box-shadow: 0px 1px 2px 0 #373737;
     background-color: #a9a9a9;
@@ -238,6 +232,138 @@ header h1{
     height: 100%;
 }
 
+
+
+/* Contato */
+.contato{
+    max-width: 500px;
+    text-align: center;
+}
+
+.contato > div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.item-contato img{
+    width: 100%;
+    height: 100px;
+}
+
+
+.item-contato{
+    max-width: 80px;
+    margin-bottom: 20px;
+}
+
+.item-contato a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.item-contato:hover{
+    cursor: pointer;
+}
+
+/* Pop Up */
+.pop-up{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000da;
+    opacity: 0;
+    z-index: -1;
+    overflow:scroll;
+}
+
+.pop-up.active{
+    opacity: 1;
+    z-index: 1;
+    
+}
+
+.site{
+    width: 90vw;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: #FFFFFF;
+    position: relative;
+    padding: 20px;
+    overflow: auto;
+}
+
+/* botao fechar pop-up */
+#close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    color: #FFFFFF;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+
+#close:hover{
+    cursor: pointer;
+}
+
+/* informações */
+.info{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+.info.pop{
+    position: absolute;
+    right: 50px;
+    top: 10px;   
+}
+
+.info:hover{
+    cursor: pointer;
+}
+
+.info img{
+    width: 100%;
+}
+
+.info{
+    position: relative;
+}
+
+.info::after {
+    display: none;
+    position: absolute;
+    top: 15px;
+    padding: 5px;
+    border-radius: 3px;
+    right: 30px;
+    content: attr(data-info);
+    white-space: normal;
+    min-width: 200px;
+    background-color: #e4e4e4;
+    box-shadow: 0 2px 5px 0 #373737;
+    color: #000000;
+    z-index: 2;
+}
+ 
+.info.portfolio::after{
+    content: 'Projetos pessoais desenvolvidos para praticar HTML, CSS e Javascript. Clique em algum dos projetos para vizualiza-lo. O código os projetos pode ser visto no meu Github.';
+}
+
+.info:hover::after {
+    display: block;
+}
+
+/* responsivo */
 @media(max-width: 768px) {
     .item-portfolio{
         min-width: 48%;
@@ -281,140 +407,3 @@ header h1{
     }
 
 }
-
-
-/* Contato */
-
-
-.contato{
-    max-width: 500px;
-    text-align: center;
-}
-
-.contato > div{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
-}
-
-.item-contato img{
-    width: 100%;
-    height: 100px;
-}
-
-
-.item-contato{
-    max-width: 80px;
-    margin-bottom: 20px;
-}
-
-.item-contato a{
-    text-decoration: none;
-    color: #000000;
-}
-
-.item-contato:hover{
-    cursor: pointer;
-}
-
-/* Pop Up */
-
-
-
-.pop-up{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000da;
-    opacity: 0;
-    z-index: -1;
-    overflow:scroll;
-}
-
-.pop-up.active{
-    opacity: 1;
-    z-index: 1;
-    
-}
-
-.site{
-    width: 90vw;
-    height: 90vh;
-    margin: 5vh auto;
-    background-color: #FFFFFF;
-    position: relative;
-    padding: 20px;
-    overflow: auto;
-}
-
-.site.small{
-    height: 40vh;
-}
-
-#close{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background: red;
-    color: #FFFFFF;
-    border: none;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-}
-
-
-#close:hover{
-    cursor: pointer;
-}
-
-.info{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background: #FFFFFF;
-}
-
-.info.pop{
-    position: absolute;
-    right: 50px;
-    top: 10px;   
-}
-
-.info:hover{
-    cursor: pointer;
-}
-
-.info img{
-    width: 100%;
-}
-
-.info{
-    position: relative;
-}
-
-.info::after {
-    display: none;
-    position: absolute;
-    top: 15px;
-    padding: 5px;
-    border-radius: 3px;
-    right: 30px;
-    content: attr(data-info);
-    white-space: normal;
-    min-width: 200px;
-    background-color: #e4e4e4;
-    box-shadow: 0 2px 5px 0 #373737;
-    color: #000000;
-    z-index: 2;
-}
-  
-.info.portfolio::after{
-    content: 'Projetos pessoais desenvolvidos para praticar HTML, CSS e Javascript. Clique em algum dos projetos para vizualiza-lo. O código os projetos pode ser visto no meu Github.';
-}
-
-.info:hover::after {
-    display: block;
-  }
