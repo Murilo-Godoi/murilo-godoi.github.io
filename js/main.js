@@ -22,6 +22,31 @@ const loadItems = (dados, container) => {
     })
 }
 
+//scroll suave para uma posição da pagina
+
+const menuListener = () => {
+    document.querySelectorAll('.menu a[href^="#"]').forEach(item => {
+        item.addEventListener('click',scrollToId)
+    })
+}
+
+function scrollToId(evento) {
+    evento.preventDefault()
+    const to = position(evento.target) - 80
+    scrollTo(to)
+}
+
+function position(element) {
+    const id = element.getAttribute('href');
+    return document.querySelector(id).offsetTop
+}
+
+function scrollTo (position){
+    window.scroll({
+        top: position, behavior:"smooth"
+    })
+}
+
 // avançar e voltar os itens do portfolio
 const next = () => {
     let itens = document.querySelectorAll('.item-portfolio');
@@ -82,6 +107,7 @@ const mainContainer = document.querySelector('.container')
 
 // chamadas de funções
 loadItems(dados,mainContainer)
+menuListener()
 typeWriter(document.querySelector('#name'))
 setTimeout( () => typeWriter(document.querySelector('#subtitle')),1000)
 

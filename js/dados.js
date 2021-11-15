@@ -91,11 +91,11 @@ const dados = [
             </ul>
         </nav>
 
-        <header id="topo" class="topo">
+        <div id="topo" class="header">
             <h1>Fotógrafo Profissional</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             <a href="#serviços" class="botao">Ver Mais</a>
-        </header>
+        </div>
 
         <section id="sobre" class="sobre">
             <h2>Sobre</h2>
@@ -164,16 +164,6 @@ const dados = [
             <a href="#topo">VOLTAR</a>
             <p>Desenvolvido por Murilo Godoi</p>
         </footer>
-
-        <div class="pop-up" id="pop-up">
-            <div class="pop-content">
-                <button id="close">X</button>
-                <h2>Dando um zoom ...</h2>
-                <div class="img-container" id="img-container"></div>
-            </div>
-            
-        </div>
-        <script src=""></script>
         `,
     'info':'Landing page estática desenvolvida para praticar HTML e CSS, totalmente responsiva'
     },

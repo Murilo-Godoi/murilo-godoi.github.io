@@ -15,6 +15,7 @@ body{
     top: 0;
     width: 100vw;
     background-color: #000000;
+    z-index: 1;
 }
 
 .menu{ 
@@ -306,6 +307,7 @@ header h1{
     height: 30px;
     width: 30px;
     border-radius: 50%;
+    z-index: 2;
 }
 
 
@@ -324,7 +326,8 @@ header h1{
 .info.pop{
     position: absolute;
     right: 50px;
-    top: 10px;   
+    top: 10px; 
+    z-index: 2; 
 }
 
 .info:hover{
@@ -375,21 +378,19 @@ header h1{
 }
 
 @media(max-width: 550px){
-    .menu{
+    .menu >a {
         display: none;
+    }
+
+    .menu ul{
+        width: 100%;
+        justify-content: space-evenly;
     }
 
     .header-wrap{
         flex-direction: column;
     }
     
-    header::before{
-        top: 0px;
-    }
-
-    header{
-        margin-top: 0px;
-    }
 
     .item-portfolio{
         min-width: 97%;
